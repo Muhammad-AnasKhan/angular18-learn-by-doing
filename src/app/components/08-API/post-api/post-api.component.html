@@ -1,0 +1,28 @@
+<div class="p-4 bg-black rounded text-white">
+    <h1>
+        POST API
+    </h1>
+    <h3>Using HttpClient</h3>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-5">
+        <div class="form-group">
+            <label for="">Name</label>
+            <input class="form-control" [(ngModel)]="postObj.name" type="text" name="" id="">
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input class="form-control" [(ngModel)]="postObj.email" type="text" name="" id="">
+        </div>
+    </div>
+</div>
+<br>
+<button class="btn btn-warning" (click)="Submit()">Submit</button>
+
+<br>
+<hr>
+<br>
+<h4>Response Object: </h4>
+{{postRequestResponse ? (postRequestResponse | json) : "Null"}}

@@ -1,0 +1,97 @@
+<div class="bg-black text-white rounded p-4">
+    <h1>Atttibute Directive</h1>
+    <h1>[ngClass], [ngStyle], ...</h1>
+    <button routerLink="/str-directive" class="btn btn-danger mt-2">Move to Structural Directive</button>
+</div>
+<br>
+<div class="row">
+    <div class="col-3">
+        <h2 class="text-center p-4 text-white" [ngClass]="div1BgClass">Div 1</h2>
+        <br>
+        <div class="text-center">
+            <button class="btn btn-danger" (click)="addRedClass()">make red</button>
+            <button class="btn btn-primary" (click)="addBlueClass()">make blue</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <h2 class="text-center p-4 text-white" [ngClass]="isDiv2Active ? 'bg-success':'bg-warning'">Div 2</h2>
+        <br>
+        <div class="text-center">
+            <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <h2 class="text-center p-4 text-white" [ngClass]="num1==num2?'bg-danger':'bg-warning'">Div 3</h2>
+        <br>
+        <div class="text-center">
+            <input [(ngModel)]="num1" placeholder="num 1" type="text" name="" id="">
+            <input [(ngModel)]="num2" placeholder="num 2" type="text" name="" id="">
+        </div>
+    </div>
+    <div class="col-3">
+        <h2 class="text-center p-4 text-white" [ngClass]="isActive?'bg-dark ':'bg-warning'">Div 4</h2>
+        <br>
+        <div class="text-center">
+            <input [(ngModel)]="isActive" type="checkbox" name="" id="">
+            <select class="ms-3" name="" id="">
+                <option value="">select State</option>
+                <option value="PK">PK</option>
+                <option value="US">US</option>
+                <option value="UK">UK</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>
+                Sr.
+            </td>
+            <td>
+                Id
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                City
+            </td>
+            <td>
+                Is Active
+            </td>
+            <td>
+                Total Marks
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stud of studentObj; let sr = index">
+            <td>
+                {{sr+1}}
+            </td>
+            <td>
+                {{stud.studid}}
+            </td>
+            <td>
+                {{stud.Name}}
+            </td>
+            <td>
+                {{stud.City}}
+            </td>
+            <td  [ngStyle]="{'background-color':stud.isActive ?'green':'red'}">
+                {{stud.isActive ? 'Yes':'No'}}
+            </td>
+            <td>
+                <div class="progress" role="progressbar">
+                     <div class="progress-bar" [ngStyle]="{'width': stud.totalMarks+'%'}">{{stud.totalMarks}}%</div>
+                  </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div [ngStyle]="customStyle"  >
+    element with custom style
+</div>

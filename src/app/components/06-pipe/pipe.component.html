@@ -1,0 +1,84 @@
+<div class="bg-black text-white rounded p-4">
+
+    <h1>Pipe in angular</h1>
+    <h1>Default Pipe & Custom Pipe</h1>
+</div>
+<br>
+<h1>
+    Builtin Pipes
+</h1>
+<hr>
+<br>
+<h3>uppercase, lowercase, titlecase pipe</h3>
+<div class="row">
+    <div class="col-4 bg-light rounded p-2">
+        original value - {{name}}
+        <br>
+        after Pipe -  {{name | uppercase}}
+    </div>
+    <div class="col-4 bg-light rounded p-2">
+        original value - {{name}}
+        <br>
+        after Pipe -  {{name | titlecase}}
+    </div>
+   
+</div>
+<br>
+<h3>Date pipe</h3>
+<div class="row">
+    <div class="col-4 bg-light rounded p-2">
+        original value - {{date}}
+        <br>
+        after Pipe -  {{date | date}}
+    </div>
+    <div class="col-4 bg-light rounded p-2">
+        original value - {{date}}
+        <br>
+        after Pipe -  {{date | date:'MMMM/dd/yyyy'}}
+    </div>
+   
+    <div class="col-4 bg-light rounded p-2">
+        original value - {{date}}
+        <br>
+        after Pipe -  {{date | date:'MMMM-dd-yyyy hh:mm:ss'}}
+    </div>
+   
+</div>
+<br>
+<h3>Json pipe</h3>
+<div class="row">
+    <div class="col-4 bg-light rounded p-2">
+        original value - {{student}}
+        <br>
+        after Pipe -  {{student | json}}
+    </div>
+   
+</div>
+<br>
+<h3>Async pipe</h3>
+<div class="row">
+    <div class="col-4 bg-light rounded p-2">
+        original value - {{currentTime}}
+        <br>
+        <!-- multi pipe chain, order of execution will be form left to right  -->
+        after Pipe -  {{currentTime | async | date : 'hh:mm:ss '}}
+    </div>
+   
+</div>
+
+<br>
+<h1>
+    Custom Pipes
+</h1>
+<hr>
+<br>
+
+<h3>Not Available pipe</h3>
+<div class="row">
+    <div class="col-4 bg-light rounded p-2">
+        original value - {{student.status}}
+        <br>
+        after Pipe -  {{student.status | notAvailble}}
+    </div>
+   
+</div>

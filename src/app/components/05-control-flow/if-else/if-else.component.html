@@ -1,0 +1,58 @@
+<div class="bg-black text-white rounded p-4">
+    <h1>{{'@'}}If,  {{'@'}}Else, {{'@'}}Else if ...</h1>
+
+</div>
+<br>
+<div class="row">
+    <div class="col-3">
+        @if(isDiv1Visible){
+            <h2 class="text-center bg-primary p-4 text-white">Div 1</h2>
+        }
+        <br>
+        <div class="text-center">
+            <button class="btn btn-primary" (click)="showDiv1()" >Show</button>
+            <button class="btn btn-dark" (click)="hideDiv1()">Hide</button>
+        </div>
+    </div>
+    <div class="col-3">
+        @if (isDiv2Visible){
+            <h2  class="text-center bg-success p-4 text-white">Div 2</h2>
+        }
+        <br>
+        <div class="text-center">
+            <button class="btn btn-success" (click)="toggleDiv2()" >Toggle</button>
+        </div>
+    </div>
+    <div class="col-3">
+        @if (num1 === num2){
+        <h2 class="text-center bg-danger p-4 text-white">Div 3</h2>
+        }
+        <br>
+        <div class="text-center">
+            <input  placeholder="num 1" [(ngModel)]="num1"  type="text" name="" id="">
+            <input placeholder="num 2" [(ngModel)]="num2"  type="text" name="" id="">
+        </div>
+    </div>
+    <div class="col-3">
+        @if(selectedState=='Active'){
+        <h2  class="text-center bg-dark p-4 text-white">Student is Active</h2>
+        }
+        @else if(selectedState=='De-Active'){
+        <h2  class="text-center bg-dark p-4 text-white">Student is In-Active</h2>
+        }
+        @else if(selectedState=='Pending'){
+        <h2  class="text-center bg-dark p-4 text-white">Student is Pending</h2>
+        }
+        <br>
+        <div class="text-center">
+            <select [(ngModel)]="selectedState" class="ms-3" name="" id="">
+                <option value="">select State</option>
+                <option value="Active">Active</option>
+                <option value="De-Active">In-Active</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+    </div>
+</div>
+<hr>
+

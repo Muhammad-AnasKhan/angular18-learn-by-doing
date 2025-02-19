@@ -1,0 +1,49 @@
+<div class="my-3 text-bg-secondary bg-black text-white p-5 rounded">
+    <h2>Subject, Behaviour Subject</h2>
+    <hr>
+    <h3><em>Observable</em></h3> in RxJS is a powerfull tool which streamlines async operations. <br> Obsevable is a
+    base class for Subject, BehaviourSubject, AsyncSubject, ReplaySubject
+    <br>
+    <div>
+        <h3>Subject:</h3>
+        <ul>
+            <li><b>Subject</b> is a multicast observable, meaning it can emit values to multiple subscribers
+                simultaneously.</li>
+            <li>It does <b>not</b> hold any current value. If a subscriber joins after a value is emitted, the
+                subscriber will not receive that value.</li>
+            <li>It emits values to all its subscribers as soon as it gets a new value.</li>
+            <li><b>Common Use Cases:</b>
+                <ul>
+                    <li>Emitting values triggered by user interactions (e.g., button clicks).</li>
+                    <li>Streaming real-time data updates (e.g., from WebSocket or API calls).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>BehaviorSubject:</h3>
+        <ul>
+            <li><b>BehaviorSubject</b> is a multicast observable that stores the most recent value.</li>
+            <li>New subscribers always receive the last emitted value immediately upon subscribing, even if they
+                subscribed after the value was emitted.</li>
+            <li>It emits new values to all subscribers as soon as it gets them.</li>
+            <li><b>Common Use Cases:</b>
+                <ul>
+                    <li>Storing application state (e.g., user authentication status).</li>
+                    <li>Sharing data between parent and child components.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="row gap-4">
+    <div class="col-md-5 card p-4 bg-danger text-white">
+        <h3><em>Subject</em> Example</h3>
+        <h5>Current Role: {{currentRole}}</h5>
+    </div>
+    <div class="col-md-5 card p-4 bg-success text-white">
+        <h3><em>Behaviour Subject</em> Example</h3>
+        <h5>Current Role: {{role}}</h5>
+    </div>
+</div>

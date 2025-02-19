@@ -1,0 +1,46 @@
+<div class="my-3 text-bg-secondary bg-black text-white p-5 rounded">
+    <h2>Signals</h2>
+    <p>
+        Signals are a way to manage state in an Angular application. They are similar to reactive programming concepts
+        like Observables, but they are more powerful and easier to use.
+    </p>
+    <h3>Key Points</h3>
+    <ul>
+        <li>Signals are functions that return a value.</li>
+        <li>Signals are reactive, meaning they can be observed and updated.</li>
+        <li>!! Signals still work if we turn off component change detection. Hence it doesn't need zone.js !!</li>
+        <br>
+        <li>but even if change detection is off, when signals gets new value it automatically updates the UI, hence
+            ordinary variables also get updated.</li>
+    </ul>
+</div>
+
+<div>
+    <h3>Without Signals</h3>
+    <p>First Name: {{ firstNameVar }}</p>
+    <button class="btn btn-primary" (click)="updateFirstNameVar()">Update First Name</button>
+</div>
+
+<div>
+    <h3>Signal Example</h3>
+    <p>First Name: {{ firstName() }} </p>
+    <p>Last Name: {{ lastName() }}</p>
+    <p>Computed Signal => Full Name: {{ fullName() }}</p>
+    <button class="btn btn-primary" (click)="updateFirstNameSignal()">Update First Name</button>
+    <button class="btn btn-primary ms-3" (click)="updateLastNameSignal()">Update Last Name</button>
+</div>
+<hr>
+<div class="row">
+    <div class="col-6">
+        <div>
+            <p>List: {{ list() }}</p>
+            <button class="btn btn-primary" (click)="updateListSignal()">Update List</button>
+        </div>
+    </div>
+    <div class="col-6">
+        <div>
+            <p>Object: {{ obj().name}}, {{ obj().age }}</p>
+            <button class="btn btn-primary" (click)="updateObjSignal()">Update Object</button>
+        </div>
+    </div>
+</div>

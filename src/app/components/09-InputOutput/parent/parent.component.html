@@ -1,0 +1,20 @@
+<div class="p-4 bg-black rounded text-white">
+    <h1>
+        Decorators
+    </h1>
+    <h3>{{'@'}}Input(), {{'@'}}Output()</h3>
+</div>
+
+<br>
+<app-bs-alert [alertType]="'alert-primary'" [alertText]="'primary alert using @Input()'"></app-bs-alert>
+<app-bs-alert [alertType]="'alert-secondary'" [alertText]="'secondary alert using @Input()'"></app-bs-alert>
+<app-bs-alert [alertType]="'alert-success'" [alertText]="'success alert using @Input()'"></app-bs-alert>
+<app-bs-alert [alertType]="'alert-danger'" [alertText]="'danger alert using @Input()'"></app-bs-alert>
+<app-bs-alert [alertType]="'alert-warning'" [alertText]="'warning alert using @Input()'"></app-bs-alert>
+<app-bs-alert [alertType]="'alert-info'" [alertText]="'info alert using @Input()'"></app-bs-alert>
+<app-bs-alert [alertType]="'alert-light'" [alertText]="'light alert using @Input()'"></app-bs-alert>
+<app-bs-alert [alertType]="'alert-dark'" [alertText]="'dark alert using @Input()'"></app-bs-alert>
+
+<app-button (alertEvent)="alertClick($event)" [buttonText]="'Click me using @Output()'"></app-button>
+
+

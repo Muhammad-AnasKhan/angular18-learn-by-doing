@@ -1,0 +1,80 @@
+<div class="p-4 bg-black rounded text-white">
+    <h1>
+        Template Forms
+    </h1>
+    <h3>Using ngModel</h3>
+</div>
+
+<br>
+
+<form class="row g-3 needs-validation" #form="ngForm">
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">First name</label>
+      <input type="text" class="form-control" #fName="ngModel" [(ngModel)]="studObj.firstName" name="firstName" id="validationCustom01" required minlength="3">
+      <!-- {{fName.errors| json}} -->
+      @if (fName.errors?.['required'] && (fName.touched || fName.dirty)){
+          <div class="bg-red text-danger">
+            <span> Required </span>
+          </div>
+       } @else if (fName.errors?.['minlength'] && (fName.touched || fName.dirty)){
+        <div class="bg-red text-danger">
+          <span> Should have atleast 3 chars </span>
+        </div>
+     } 
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input type="text" class="form-control" [(ngModel)]="studObj.lastName" name="lastName" id="validationCustom02" value="Otto" >
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Username</label>
+      <div class="input-group">
+        <span class="input-group-text" id="inputGroupPrepend">{{"@"}}</span>
+        <input type="text" class="form-control" [(ngModel)]="studObj.userName" name="userName" id="validationCustomUsername" aria-describedby="inputGroupPrepend">
+        
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">City</label>
+      <input type="text" class="form-control" [(ngModel)]="studObj.city" name="city" id="validationCustom03" >
+      
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">State</label>
+      <select class="form-select" id="validationCustom04" [(ngModel)]="studObj.state" name="state" required>
+        <option selected value="">Choose...</option>
+        <option>Multan</option>
+        <option>Punjab</option>
+        <option>Sindh</option>
+        <option>KPK</option>
+        <option>...</option>
+      </select>
+      
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05"  class="form-label">Zip</label>
+      <input type="text" class="form-control" [(ngModel)]="studObj.zip" name="zip"  id="validationCustom05" >
+     
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" [(ngModel)]="studObj.isAgreeToTerms" name="isAgreeToTerms" type="checkbox" value="" id="invalidCheck" >
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-warning"  type="button" (click)="reset()">Reset </button>
+        <!-- {{form.invalid}} -->
+      <button class="btn btn-primary" [disabled]="form.invalid" type="button" (click)="submit()">Submit </button>
+    </div>
+  </form>
+    <br>
+  <div class="col-4 lh-lg">{{studObj | json}}</div>

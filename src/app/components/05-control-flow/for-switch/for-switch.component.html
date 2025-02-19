@@ -1,0 +1,107 @@
+<div class="bg-black text-white rounded p-4">
+    <h1>{{'@'}}for, {{'@'}}switch ...</h1>
+
+</div>
+<br>
+<div class="row">
+    <div class="col-3">
+
+        @for (item of cityArray; track $index){
+        <li>{{item}}</li>
+        }
+    </div>
+    <div class="col-3">
+
+        @for (item of cityArray; track $index){
+        <div>{{item}}</div>
+        }
+    </div>
+    <div class="col-3">
+        <Select>
+
+            @for (item of cityArray; track $index){
+            <option>{{item}}</option>
+            }
+        </Select>
+    </div>
+    <div class="col-3">
+        <!-- Selected val : {{selectedStud}} -->
+        <!-- <Select [(ngModel)]="selectedStud"> -->
+        <Select>
+
+            @for (stud of studentObj; track $index){
+            <option [value]="stud.studid">{{stud.name}}</option>
+            }
+        </Select>
+    </div>
+</div>
+<hr>
+<div>
+    <input type="text" [(ngModel)]="number">
+    <div>The Value of today is : 
+
+        @switch (number) {
+            @case ('1') {
+                <span>Monday</span>
+            }
+            @case ('2') {
+                <span>Tuesday</span>
+            }
+            @case ('3') {
+                <span>Wednesday</span>
+            }
+            @case ('4') {
+                <span>thursday</span>
+            }
+            @case ('5') {
+                <span>Friday</span>
+            }
+            @default {
+                <span>wrong entry</span>
+            }
+        }
+    </div>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>
+                Sr.
+            </td>
+            <td>
+                ID
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                City
+            </td>
+            <td>
+                Status
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of studentObj; track $index) {
+        <tr>
+            <td>
+                {{$index+1}}
+            </td>
+            <td>
+                {{item.studid}}
+            </td>
+            <td>
+                {{item.name}}
+            </td>
+            <td>
+                {{item.city}}
+            </td>
+            <td>
+                {{item.isActive==true? "Yes":"No"}}
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>

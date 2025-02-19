@@ -1,0 +1,50 @@
+<p>ng-template works!</p>
+<div class="p-4 bg-black rounded text-white">
+    <h1>ng-template Directive</h1>
+    <p class="text-warning">The ng-template is a template element that Angular uses with structural directives. It is used to define template content that will be rendered based on certain conditions.</p>
+
+    <div class="border p-3 rounded mt-3">
+        <h3>Example 1: Basic ng-template with ngIf</h3>
+        <div *ngIf="true; then thenBlock else elseBlock"></div>
+        
+        <ng-template #thenBlock>
+            <p class="text-success">✓ This content is shown when condition is true</p>
+        </ng-template>
+        
+        <ng-template #elseBlock>
+            <p class="text-danger">✗ This content is shown when condition is false</p>
+        </ng-template>
+    </div>
+
+    <div class="border p-3 rounded mt-3">
+        <h3>Example 2: ng-template with ngTemplateOutlet</h3>
+        <ng-template #customTemplate>
+            <p class="text-info">This is a reusable template content!</p>
+        </ng-template>
+
+        <!-- Using the template multiple times -->
+        <div class="mb-2">First instance:</div>
+        <div [ngTemplateOutlet]="customTemplate"></div>
+        
+        <div class="mb-2">Second instance:</div>
+        <ng-container [ngTemplateOutlet]="customTemplate"></ng-container>
+    </div>
+
+    <div class="border p-3 rounded mt-3">
+        <h3>Example 3: ng-template with Context</h3>
+        <ng-template #greetTemplate let-name="name" let-message="message">
+            <p>Hello {{name}}! {{message}}</p>
+        </ng-template>
+
+        <ng-container [ngTemplateOutlet]="greetTemplate"
+                     [ngTemplateOutletContext]="{ name: 'User', message: 'Welcome to Angular!' }">
+        </ng-container>
+    </div>
+
+    <div class="mt-3">
+        <code class="text-warning">
+            Note: ng-template is a logical container that is not rendered directly in the DOM. 
+            It's used as a blueprint for content that will be rendered based on conditions or when explicitly used with ngTemplateOutlet.
+        </code>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="bg-black p-5 rounded-5 text-white">
+     An Observable in Angular is like a "watcher" or "stream" of data. It helps you listen to changes or events over time, such as data coming from a server or user actions like button clicks. Think of it as a pipeline that delivers data to you when it's ready.
+<br>
+<br>
+<h3>What is an Observable?</h3>
+<ul>
+    <li>It’s a way to handle asynchronous data.</li>
+    <li>It can emit values over time (e.g., 1, 2, 3... or "data loaded").</li>
+    <li>You can subscribe to it to get these values and perform actions when the data is available.</li>
+</ul>
+
+<h3> Real-Life Analogy</h3>
+<h4> Imagine a newspaper subscription:</h4>
+<ul>
+    <li>You subscribe to a newspaper service.</li>
+    <li>Every day, the newspaper (data) gets delivered to you.</li>
+    <li>You read (use) the newspaper when it arrives.</li>
+    <li>If you no longer want the newspaper, you unsubscribe to stop receiving it.</li>
+
+</ul>
+</div>
+
+<br>
+<h3>Observable Example</h3>
+<div>
+    <span *ngFor="let message of messages">{{ message }} </span>
+</div>
+<br>
+<div class="row gap-4">
+    <div class="col-md-5 card p-4 bg-danger text-white">
+        <h3><em>Subject</em> Example</h3>
+        <h5>Current Role: {{currentRole}}</h5>
+    </div>
+    <div class="col-md-5 card p-4 bg-success text-white">
+        <h3><em>Behaviour Subject</em> Example</h3>
+        <h5>Current Role: {{role}}</h5>
+    </div>
+</div>
+

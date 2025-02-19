@@ -1,0 +1,79 @@
+<div class="bg-black text-white rounded p-4">
+    <h1>Structural Directive</h1>
+    <h1>*ngIf, *ngFor, ...</h1>
+    <button (click)="moveToAttrRoute()" class="btn btn-danger mt-2">Move to Attribute Directive</button>
+
+</div>
+<br>
+<div class="row">
+    <div class="col-3">
+        <h2 *ngIf="isDiv1Visible" class="text-center bg-primary p-4 text-white">Div 1</h2>
+        <br>
+        <div class="text-center">
+            <button class="btn btn-primary" (click)="showDiv1()">Show</button>
+            <button class="btn btn-dark" (click)="hideDiv1()">Hide</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <h2 *ngIf="isDiv2Visible" class="text-center bg-success p-4 text-white">Div 2</h2>
+        <br>
+        <div class="text-center">
+            <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <h2 *ngIf="num1 == num2" class="text-center bg-danger p-4 text-white">Div 3</h2>
+        <br>
+        <div class="text-center">
+            <input  placeholder="num 1" [(ngModel)]="num1" type="text" name="" id="">
+            <input placeholder="num 2" [(ngModel)]="num2" type="text" name="" id="">
+        </div>
+    </div>
+    <div class="col-3">
+        <h2 *ngIf="isChecked && stateSelected == 'PK'"  class="text-center bg-dark p-4 text-white">Div 4</h2>
+        <br>
+        <div class="text-center">
+            <input [(ngModel)]="isChecked"  type="checkbox" name="" id="">
+            <select [(ngModel)]="stateSelected" class="ms-3" name="" id="">
+                <option value="">select State</option>
+                <option value="PK">PK</option>
+                <option value="US">US</option>
+                <option value="UK">UK</option>
+            </select>
+        </div>
+    </div>
+</div>
+<hr>
+<div>
+    <ul>
+        <li *ngFor="let city of cityArray" >{{city}}</li>
+    </ul>
+</div>
+<hr>
+<div>
+    <select name="" id="">
+        <option *ngFor="let stud of studentObj" [value]="stud.studid">{{stud.name}}</option>
+    </select>
+</div>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Sr.</td>
+            <td>ID</td>
+            <td>Name</td>
+            <td>City</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stud of studentObj;let srNo = index;">
+            <td>{{srNo+1}}</td>
+            <td>{{stud.studid}}</td>
+            <td>{{stud.name}}</td>
+            <td>{{stud.city}}</td>
+            <!-- <td>{{stud.isActive}}</td> -->
+            <td *ngIf="stud.isActive">Active</td>
+            <td *ngIf="!stud.isActive">In Active</td>
+        </tr>
+    </tbody>
+</table>

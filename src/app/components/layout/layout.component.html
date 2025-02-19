@@ -1,0 +1,113 @@
+<div class="container">
+
+    <nav class="navbar navbar-expand-lg bg-info bg-opacity-25 rounded-5 my-3" 
+         [style]="{
+           'box-shadow': 'rgba(149, 157, 165, 0.2) 0px 8px 24px'
+         }">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="home">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Core Concepts
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="data-binding">Data Binding</a></li>
+                <li><a class="dropdown-item" routerLink="app-pipe">Pipes</a></li>
+                <li><a class="dropdown-item" routerLink="app-component-lifecycle">Component Lifecycle</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Templates & Directives
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="str-directive">Structural Directive</a></li>
+                <li><a class="dropdown-item" routerLink="attr-directive">Attribute Directive</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" routerLink="app-ng-template">ng-template</a></li>
+                <li><a class="dropdown-item" routerLink="app-ng-container">ng-container</a></li>
+              </ul>
+            </li>
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Control Flow
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="app-if-else">{{'@'}}ifElse</a></li>
+                <li><a class="dropdown-item" routerLink="app-for-switch">{{'@'}}for-switch</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Forms
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="app-template-forms">Template Forms</a></li>
+                <li><a class="dropdown-item" routerLink="app-reactive-forms">Reactive Forms</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Advanced Features
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="signals">Signals</a></li>
+                <li><a class="dropdown-item" routerLink="guards">Guards</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" routerLink="parent">{{'@'}}Input, {{'@'}}Output</a></li>
+                <li><a class="dropdown-item" routerLink="app-view-child">{{'@'}}ViewChild</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                API
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="app-get-api">GET</a></li>
+                <li><a class="dropdown-item" routerLink="app-post-api">POST</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                RxJS
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="observable">Observable</a></li>
+                <li><a class="dropdown-item" routerLink="app-subject-behaviour-subject">Subject & Behaviour Subject</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- example for rxjs subject and behaviour subject -->
+          <select [(ngModel)]="role" [ngStyle]="{'width': '100px'}" class="form-select me-2" name="role" (change)="onRoleChange($event)">
+            <option value="">--Role--</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+          <div class="d-flex gap-3 align-items-center">
+            <div class="text-muted" *ngIf="userEmail">
+              {{userEmail}}
+            </div>
+            <button (click)="logOff()" class="btn btn-primary rounded-pill px-4">Log Off</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+    <router-outlet></router-outlet>
+  </div>
+  
+  

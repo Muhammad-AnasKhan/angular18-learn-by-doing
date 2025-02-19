@@ -1,0 +1,39 @@
+<div class="bg-black p-5 rounded-5 text-white">
+    <h1>Change Detection</h1>
+    Change Detection in Angular is the process of detecting changes in the application state and updating the view accordingly. 
+    <br>
+    <ul>
+        <li>Angular uses a library called Zone.js to keep track of asynchronous operations (like HTTP requests or setTimeout) and trigger change detection when needed.</li>
+        <li>This mechanism ensures that the view (what the user sees) is always updated and in sync with the current state of the application.</li>
+        <li>In newer versions of Angular, you can use signals to manage change detection, which eliminates the need for Zone.js.</li>
+    </ul>
+</div>
+<div class="bg-black p-5 rounded-5 text-white mt-4">
+    <h2>Signals in Angular</h2>
+    Signals are a new way to manage change detection in Angular. They provide a more efficient and fine-grained control over when and how the view updates.
+    <ul>
+        <li>Signals allow you to explicitly mark parts of your application state that should trigger change detection when they change.</li>
+        <li>This can lead to performance improvements, as Angular can avoid unnecessary checks and updates.</li>
+        <li>Using signals can also make your code more predictable and easier to debug.</li>
+    </ul>
+</div>
+
+<div class="bg-black p-5 rounded-5 text-white mt-4">
+    <h2>KeyValueDiffer</h2>
+    KeyValueDiffer is a service in Angular that helps track changes in objects (key-value pairs).
+    <ul>
+        <li>It can be used to detect changes in an object's properties, such as additions, deletions, or updates.</li>
+        <li>This is useful when you need to perform specific actions based on changes to an object's properties.</li>
+        <li>KeyValueDiffer is part of Angular's change detection mechanism and can be used in conjunction with other change detection strategies.</li>
+    </ul>
+</div>
+
+<div class="bg-black p-5 rounded-5 text-white mt-4">
+    <h2>IterableDiffer</h2>
+    IterableDiffer is a service in Angular that helps track changes in iterable collections, such as arrays or sets.
+    <ul>
+        <li>It can detect changes like additions, removals, and moves within a collection.</li>
+        <li>This is useful for efficiently updating the view when the underlying data changes.</li>
+        <li>IterableDiffer is also part of Angular's change detection mechanism and can be used to optimize performance.</li>
+    </ul>
+</div>

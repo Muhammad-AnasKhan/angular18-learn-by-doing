@@ -1,0 +1,26 @@
+<div class="p-4 bg-black rounded text-white">
+    <h1>
+        GET API
+    </h1>
+    <h3>Using HttpClient</h3>
+</div>
+
+<br>
+
+<button class="btn btn-warning" (click)="getAllPosts()">Get Posts</button>
+<br>
+<br>
+<!-- {{postsList | json}} -->
+ <div class="row gap-3">
+
+     @for (item of postsList; track $index) {
+        <div class="col-3 p-4 bg-light rounded-3">
+            <h3 class="mb-2">{{$index + 1}} : {{item.title}}</h3>
+            <p>{{item.body}}</p>
+        </div>
+     }
+ </div>
+<br>
+<button class="btn btn-warning" (click)="getAllProducts()">Get Products</button>
+<br>
+{{productsList | json}}

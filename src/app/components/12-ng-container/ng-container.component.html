@@ -1,0 +1,100 @@
+<div class="my-3 text-bg-secondary bg-black text-white p-5 rounded">
+    <h2>ng-container</h2>
+    <p>
+        ng-container is a <em> grouping element</em> or imaginary div/container that does not render any additional DOM elements. It is often used to group elements together without adding extra nodes to the DOM.
+    </p>
+</div>
+
+<ng-container >
+    <p>ng-container without any attributes</p>
+  </ng-container>
+  
+<!-- Example 1: Multiple structural directives -->
+<ng-container *ngIf="isVisible">
+  <div *ngFor="let item of items">{{ item }}</div>
+</ng-container>
+
+<!-- Example 2: Grouping elements without extra DOM node -->
+<ng-container *ngIf="user">
+  <h2>Welcome, {{ user.name }}!</h2>
+  <p>Role: {{ user.role }}</p>
+  <p>Last login: {{ user.lastLogin }}</p>
+</ng-container>
+
+<!-- Example 3: Conditional rendering with multiple options -->
+<ng-container [ngSwitch]="status">
+  <p *ngSwitchCase="'loading'">Loading...</p>
+  <p *ngSwitchCase="'success'">Data loaded successfully!</p>
+  <p *ngSwitchCase="'error'">Error loading data</p>
+  <p *ngSwitchDefault>Unknown status</p>
+</ng-container>
+
+<!-- Example 4: Complex nested conditions -->
+<ng-container *ngIf="isLoggedIn">
+  <ng-container *ngIf="hasPermission">
+    <button class="btn btn-primary">Edit</button>
+    <button class="btn btn-danger">Delete</button>
+  </ng-container>
+  <ng-container *ngIf="!hasPermission">
+    <p>You don't have permission to modify this content</p>
+  </ng-container>
+</ng-container>
+
+<div class="border p-3 rounded mt-3">
+    <h3>ng-container with ng-template with Context</h3>
+    <ng-template #greetTemplate let-name="name" let-message="message">
+        <p>Hello {{name}}! {{message}}</p>
+    </ng-template>
+
+    <ng-container [ngTemplateOutlet]="greetTemplate"
+                 [ngTemplateOutletContext]="{ name: 'User', message: 'Welcome to Angular!' }">
+    </ng-container>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ng-container</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+   <ng-container *ngIf="isGetApiCalling">
+    <tr>
+        <td colspan="2" class="text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-border text-secondary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-border text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-border text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-border text-warning" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-border text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </td>
+    </tr>
+   </ng-container>
+       <ng-container *ngIf="!isGetApiCalling">
+        <tr *ngFor="let item of postsList; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{item.title}}</td>
+        </tr>
+       </ng-container>
+    </tbody>
+</table>
+<button class="btn btn-primary" (click)="getAllPosts()">Get Posts</button>

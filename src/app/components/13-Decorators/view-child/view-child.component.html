@@ -1,0 +1,21 @@
+<div class="my-3 text-bg-secondary bg-black text-white p-5 rounded">
+    <h2>{{'@'}}ViewChild</h2>
+    <p>
+        🔍 {{'@'}}ViewChild is a decorator in Angular that provides direct access to child elements, components, or directives within a parent component.
+        <br><br>
+        💡 It's similar to how document.querySelector() works in vanilla JavaScript, but is more powerful because:
+        <br>
+        - It's strongly typed and provides compile-time type checking
+        <br>
+        - It maintains proper component encapsulation
+        <br>
+        - It automatically handles component lifecycle and updates
+    </p>
+</div>
+
+<input class="form-control" type="text" #inputRef>
+<br>
+<button class="btn btn-primary" (click)="accessInput()">Access Input </button>
+<app-button [buttonText]="'Access Child'" (alertEvent)="accessChildComponent($event)"></app-button>
+
+
