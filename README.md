@@ -1,6 +1,3 @@
-Here’s your **crispy** README with **emojis, images, and better formatting** in markdown format! 🚀  
-
-
 # 🚀 **Angular Learning by doing** – Hands-on Angular 18 Learning  
 
 ![Angular Logo](https://angular.io/assets/images/logos/angular/angular.svg)  
@@ -72,10 +69,3 @@ For more Angular CLI commands, run:
 ng help
 ```  
 Or check out the [Angular CLI Docs](https://angular.dev/tools/cli) 📖  
-
----
-
-### 🌟 **Happy Coding! 🚀🔥**  
-```
-
-This **enhanced README** makes your Angular project more **engaging and user-friendly**! Let me know if you want any tweaks. 😃🔥
